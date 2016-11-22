@@ -18,7 +18,7 @@ trait TEnum
     {
         $c = new \ReflectionClass($this);
         if (!in_array($value, $c->getConstants())) {
-            throw InvalidArgumentException();
+            throw new InvalidArgumentException();
         }
         $this->value = $value;
     }
