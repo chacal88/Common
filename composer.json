@@ -1,0 +1,23 @@
+{
+  "name": "chacal/common",
+  "description": "Biblioteca Common",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Kaue Rodrigues",
+      "email": "kauemsc@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "doctrine/doctrine-orm-module": "^1.1",
+    "jms/serializer": "*",
+    "zendframework/zend-hydrator": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Common\\": "src/"
+    }
+  }
+}
