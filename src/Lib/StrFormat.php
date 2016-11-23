@@ -1,17 +1,29 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: chacal
- * Date: 21/10/16
- * Time: 14:33
+ * Copyright (c) 2016 , Kaue Rodrigues All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted,:
+ *
  */
 
 namespace Common\Lib;
 
-
+/**
+ * Class StrFormat
+ *
+ * @author Kaue Rodrigues <kauemsc@gmail.com>
+ *
+ * @package Common\Lib
+ */
 final class StrFormat
 {
 
+    /**
+     * format
+     *
+     * @param $str
+     * @return mixed|string
+     */
     public static function format($str)
     {
 
@@ -23,7 +35,10 @@ final class StrFormat
     }
 
     /**
-     * CpfFormat constructor.
+     * formatCpf
+     *
+     * @param $cpf
+     * @return mixed|string
      */
     public static function formatCpf($cpf)
     {
@@ -36,7 +51,10 @@ final class StrFormat
     }
 
     /**
-     * cnpjFormat constructor.
+     * formatCnpj
+     *
+     * @param $cnpj
+     * @return mixed|string
      */
     public static function formatCnpj($cnpj)
     {

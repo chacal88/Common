@@ -1,25 +1,32 @@
 <?php
-
-
+/**
+ * Copyright (c) 2016 , Kaue Rodrigues All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted,:
+ *
+ */
 namespace Common\Entity\Traits;
+
 
 use DateTime;
 use JMS\Serializer\Annotation as Serializer;
 use Zend\Hydrator\ClassMethods;
 
 /**
+ * Class TEntity
  *
- * @ORM\MappedSuperclass(repositoryClass="Doctrine\ORM\EntityRepository")
+ * @author Kaue Rodrigues <kauemsc@gmail.com>
+ *
+ * @package Common\Entity\Traits
  */
 trait TEntity
 {
 
     /**
-     * @var integer
-     *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @var integer
      */
     private $id;
 
@@ -72,6 +79,12 @@ trait TEntity
         $this->updated = new DateTime();
     }
 
+    /**
+     * hydrate
+     *
+     * @param $data
+     * @return $this
+     */
     public function hydrate($data)
     {
         $hydrator = new ClassMethods();
@@ -90,10 +103,12 @@ trait TEntity
 
     /**
      * @param boolean $active
+     * @return TEntity
      */
-    public function setActive(bool $active)
+    public function setActive($active)
     {
         $this->active = $active;
+        return $this;
     }
 
     /**
@@ -106,10 +121,12 @@ trait TEntity
 
     /**
      * @param DateTime $created
+     * @return TEntity
      */
-    public function setCreated(DateTime $created)
+    public function setCreated($created)
     {
         $this->created = $created;
+        return $this;
     }
 
     /**
@@ -122,10 +139,13 @@ trait TEntity
 
     /**
      * @param DateTime $updated
+     * @return TEntity
      */
-    public function setUpdated(DateTime $updated)
+    public function setUpdated($updated)
     {
         $this->updated = $updated;
+        return $this;
     }
+
 
 }

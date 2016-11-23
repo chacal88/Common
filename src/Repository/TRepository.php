@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Copyright (c) 2016 , Kaue Rodrigues All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted,:
+ *
+ */
 
 namespace Common\Repository;
 
@@ -10,6 +15,9 @@ use Doctrine\ORM\EntityManager;
 
 /**
  * Class TRepository
+ *
+ * @author Kaue Rodrigues <kauemsc@gmail.com>
+ *
  * @package Common\Repository
  */
 trait TRepository
@@ -20,6 +28,8 @@ trait TRepository
     protected $em;
 
     /**
+     * save
+     *
      * @param $entity
      * @return mixed
      * @throws InvalidArgumentException
@@ -39,6 +49,7 @@ trait TRepository
             $error = sprintf('Entidade ja cadastrada "%s/%s"', $entity->getId, get_class($entity));
             throw new InvalidArgumentException($error, 409, $ex);
         } catch (\Exception $ex) {
+
             $this->em->getConnection()->rollBack();
 
             throw new InvalidArgumentException($ex->getMessage(), 500, $ex);
@@ -48,6 +59,8 @@ trait TRepository
     }
 
     /**
+     * update
+     *
      * @param $entity
      * @return mixed
      * @throws InvalidArgumentException
@@ -66,6 +79,7 @@ trait TRepository
             $error = sprintf('Entidade ja cadastrada "%s/%s"', $entity->getId, get_class($entity));
             throw new InvalidArgumentException($error, 409, $ex);
         } catch (\Exception $ex) {
+
             $this->em->getConnection()->rollBack();
 
             throw new InvalidArgumentException($ex->getMessage(), 500, $ex);
@@ -75,9 +89,11 @@ trait TRepository
     }
 
     /**
+     * findOneBy
+     *
      * @param $class
      * @param $params
-     * @return bool
+     * @return bool|null|object
      */
     public function findOneBy($class, $params)
     {
@@ -91,8 +107,10 @@ trait TRepository
     }
 
     /**
+     * findAll
+     *
      * @param $class
-     * @return mixed
+     * @return array
      */
     public function findAll($class)
     {
@@ -102,6 +120,8 @@ trait TRepository
     }
 
     /**
+     * delete
+     *
      * @param $entity
      * @return bool
      */
@@ -109,7 +129,6 @@ trait TRepository
     {
 
         $this->em->remove($entity);
-
         $this->em->flush();
 
         return true;

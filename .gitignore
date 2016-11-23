@@ -9,3 +9,8 @@ nbproject
 .settings
 vendor/
 composer.phar
+
+git add --all
+git commit -m "formatação do codigo"
+git pull
+git push origin master

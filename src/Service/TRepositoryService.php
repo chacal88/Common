@@ -1,13 +1,21 @@
 <?php
+/**
+ * Copyright (c) 2016 , Kaue Rodrigues All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted,:
+ *
+ */
 
 namespace Common\Service;
+
 use Common\Repository\IRepository;
 
 /**
- * Created by PhpStorm.
- * User: chacal
- * Date: 19/10/16
- * Time: 20:19
+ * Class TRepositoryService
+ *
+ * @author Kaue Rodrigues <kauemsc@gmail.com>
+ *
+ * @package Common\Service
  */
 trait TRepositoryService
 {
@@ -18,6 +26,8 @@ trait TRepositoryService
     private $repository;
 
     /**
+     * save
+     *
      * @param $entity
      * @return mixed
      */
@@ -27,6 +37,8 @@ trait TRepositoryService
     }
 
     /**
+     * update
+     *
      * @param $entity
      * @return mixed
      */
@@ -36,6 +48,8 @@ trait TRepositoryService
     }
 
     /**
+     * findOneBy
+     *
      * @param $class
      * @param $params
      * @return mixed
@@ -46,6 +60,8 @@ trait TRepositoryService
     }
 
     /**
+     * findAll
+     *
      * @param $class
      * @return mixed
      */
@@ -55,6 +71,8 @@ trait TRepositoryService
     }
 
     /**
+     * delete
+     *
      * @param $entity
      * @return mixed
      */
