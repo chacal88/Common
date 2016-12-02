@@ -60,6 +60,18 @@ trait TRepositoryService
     }
 
     /**
+     * findOneBy
+     *
+     * @param $class
+     * @param $params
+     * @return mixed
+     */
+    public function findBy($class, $params, $order)
+    {
+        return $this->repository->findBy($class, $params, $order);
+    }
+
+    /**
      * findAll
      *
      * @param $class

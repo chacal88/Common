@@ -112,6 +112,23 @@ trait TRepository
      * @param $class
      * @return array
      */
+    public function findBy($class, $params, $order)
+    {
+        $data = $this->em->getRepository($class)->findBy(
+            $params,
+            $order
+        );
+
+
+        return $data;
+    }
+
+    /**
+     * findAll
+     *
+     * @param $class
+     * @return array
+     */
     public function findAll($class)
     {
         $data = $this->em->getRepository($class)->findAll();
