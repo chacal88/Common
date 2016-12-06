@@ -41,6 +41,14 @@ interface IRepository
     public function findOneBy($class, $params);
 
     /**
+     * findBy
+     *
+     * @param $class
+     * @return array
+     */
+    public function findBy($class, $params, $order);
+
+    /**
      * findAll
      *
      * @param $class
